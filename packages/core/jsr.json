@@ -1,0 +1,11 @@
+{
+    "$schema": "https://jsr.io/schema/config-file.v1.json",
+    "name": "@discord-ui-kit/core",
+    "version": "0.0.1",
+    "exports": "./src/index.ts",
+    "license": "Unlicense",
+    "publish": {
+        "include": ["src/**/*"],
+        "exclude": ["tests/**"]
+    }
+}

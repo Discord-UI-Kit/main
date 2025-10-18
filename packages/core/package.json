@@ -1,0 +1,13 @@
+{
+    "name": "@discord-ui-kit/core",
+    "version": "0.0.1",
+    "description": "The UI Kit that saves boilerplate! - Core Utilities",
+    "module": "src/index.ts",
+    "type": "module",
+    "devDependencies": {
+        "@types/bun": "latest"
+    },
+    "peerDependencies": {
+        "typescript": "^5"
+    }
+}

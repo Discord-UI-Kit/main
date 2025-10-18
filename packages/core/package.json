@@ -1,8 +1,21 @@
 {
     "name": "@discord-ui-kit/core",
     "version": "0.0.1",
-    "description": "The UI Kit that saves boilerplate! - Core Utilities",
+    "description": "The UI Kit for Discord that saves boilerplate! - Core Utilities",
     "module": "src/index.ts",
+    "readme": "README.md",
+    "license": "UNLICENSED",
+    "bugs": {
+        "url": "https://codeberg.org/Discord-UI-Kit/discord-ui-kit/issues"
+    },
+    "author": {
+        "name": "Yoshiboi18303",
+        "url": "https://codeberg.org/Yoshiboi18303"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://codeberg.org/Yoshiboi18303/discord-ui-kit.git"
+    },
     "type": "module",
     "devDependencies": {
         "@types/bun": "latest"

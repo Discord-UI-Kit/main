@@ -5,7 +5,7 @@
     "exports": "./src/index.ts",
     "license": "Unlicense",
     "publish": {
-        "include": ["src/**/*"],
+        "include": ["src/**/*", "README.md"],
         "exclude": ["tests/**"]
     }
 }

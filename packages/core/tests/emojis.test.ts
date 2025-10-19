@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "bun:test";
 import { UiCore, UiEmojiBase } from "../src/index";
 
-describe("Base Emojis Suite", () => {
+describe("Core Emojis Suite", () => {
     let core: UiCore;
 
     beforeAll(() => {

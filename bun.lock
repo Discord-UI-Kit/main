@@ -9,7 +9,7 @@
     },
     "packages/core": {
       "name": "@discord-ui-kit/core",
-      "version": "0.0.1",
+      "version": "0.0.1-dev3",
       "devDependencies": {
         "@types/bun": "latest",
       },
@@ -21,8 +21,9 @@
       "name": "@discord-ui-kit/discord.js",
       "version": "0.0.1",
       "dependencies": {
+        "@discord-ui-kit/core": "npm:@jsr/discord-ui-kit__core@0.0.1-dev3",
         "@discordjs/builders": "^1.12.2",
-        "discord.js": "^14.23.2",
+        "discord.js": "^14.x",
       },
       "devDependencies": {
         "@types/bun": "latest",
@@ -1688,6 +1689,8 @@
     "zod-to-json-schema": ["zod-to-json-schema@3.24.6", "", { "peerDependencies": { "zod": "^3.24.1" } }, "sha512-h/z3PKvcTcTetyjl1fkj79MHNEjm+HpD6NXheWjzOekY7kV+lwDYnHw+ivHkijnCSMz1yJaWBD9vu/Fcmk+vEg=="],
 
     "zwitch": ["zwitch@2.0.4", "", {}, "sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A=="],
+
+    "@discord-ui-kit/discord.js/@discord-ui-kit/core": ["@jsr/discord-ui-kit__core@0.0.1-dev3", "https://npm.jsr.io/~/11/@jsr/discord-ui-kit__core/0.0.1-dev3.tgz", {}, "sha512-07XVMd66nLIcgzG+kPYIuC3/RE43jH1kGWgACxHUdncmh9S4YmTKAelX580Q2siCNLMi3DWM/MFfqVW8YmLLhg=="],
 
     "@discordjs/rest/@discordjs/collection": ["@discordjs/collection@2.1.1", "", {}, "sha512-LiSusze9Tc7qF03sLCujF5iZp7K+vRNEDBZ86FT9aQAv3vxMLihUvKvpsCWiQ2DJq1tVckopKm1rxomgNUc9hg=="],
 

@@ -24,7 +24,8 @@
         "typescript": "^5"
     },
     "dependencies": {
+        "@discord-ui-kit/core": "npm:@jsr/discord-ui-kit__core@0.0.1-dev3",
         "@discordjs/builders": "^1.12.2",
-        "discord.js": "^14.23.2"
+        "discord.js": "^14.x"
     }
 }

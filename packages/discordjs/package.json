@@ -1,5 +1,5 @@
 {
-    "name": "@discord-ui-kit/discord.js",
+    "name": "@discord-ui-kit/discordjs",
     "version": "0.0.1",
     "description": "The UI Kit for Discord that saves boilerplate! - Discord.js Edition",
     "module": "src/index.ts",

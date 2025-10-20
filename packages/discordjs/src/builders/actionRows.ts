@@ -20,7 +20,7 @@ export class PredefinedActionRows {
     }
 
     private get emojis(): UiEmojiBase {
-        return this.client.options.emojis!;
+        return this.client.core.emojis;
     }
 
     private get buttons(): ButtonBuilders {

@@ -75,7 +75,7 @@ export class ButtonBuilders {
     }
 
     private get emojis(): UiEmojiBase {
-        return this.client.options.emojis!;
+        return this.client.core.emojis;
     }
 
     public primary(customId: string, options: LabelOrOptions): ButtonBuilder {

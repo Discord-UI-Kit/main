@@ -38,7 +38,7 @@ export class EmbedBuilders {
     }
 
     private get colors() {
-        return this.client.options.colors!;
+        return this.client.core.colors;
     }
 
     public info(

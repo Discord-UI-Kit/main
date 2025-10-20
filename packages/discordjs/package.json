@@ -1,6 +1,6 @@
 {
     "name": "@discord-ui-kit/discordjs",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "The UI Kit for Discord that saves boilerplate! - Discord.js Edition",
     "module": "src/index.ts",
     "readme": "README.md",

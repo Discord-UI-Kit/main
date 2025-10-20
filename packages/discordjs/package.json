@@ -22,11 +22,9 @@
         "@types/bun": "latest",
         "typescript": "^5"
     },
-    "peerDependencies": {
-        "discord.js": "^14.x"
-    },
     "dependencies": {
         "@discord-ui-kit/core": "npm:@jsr/discord-ui-kit__core@0.0.2",
-        "@discordjs/builders": "^1.12.x"
+        "@discordjs/builders": "^1.12.x",
+        "discord.js": "^14.x"
     }
 }

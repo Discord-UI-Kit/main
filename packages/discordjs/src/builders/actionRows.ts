@@ -8,7 +8,7 @@ import type { UiClient, UiEmojiBase } from "..";
 import type { ButtonBuilders } from "./buttons";
 import type { UiClientHelpers } from "../helpers";
 
-class PredefinedActionRows {
+export class PredefinedActionRows {
     private client: UiClient;
     private actionRowBuilders: ActionRowBuilders;
     private helpers: UiClientHelpers;

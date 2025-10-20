@@ -1,7 +1,12 @@
 export * from "@discord-ui-kit/core";
 export * from "./allowed";
 
-import { UiCore, type UiCoreOptions } from "@discord-ui-kit/core";
+import {
+    UiColorsBase,
+    UiCore,
+    UiEmojiBase,
+    type UiCoreOptions,
+} from "@discord-ui-kit/core";
 
 import { Includes, type Allowed } from "./allowed";
 
@@ -13,13 +18,16 @@ import { SelectMenuBuilders } from "./builders/selectMenus";
 import { ModalBuilders } from "./builders/modals";
 import { UiClientHelpers } from "./helpers";
 
-interface UiClientOptions extends UiCoreOptions {
+interface UiClientOptions<
+    C extends UiColorsBase = UiColorsBase,
+    E extends UiEmojiBase = UiEmojiBase,
+> extends UiCoreOptions<C, E> {
     include?: Allowed[];
 }
 
-export class UiClient {
-    public readonly options: UiClientOptions;
-    public readonly core: UiCore;
+export class UiClient<C extends UiColorsBase = UiColorsBase, E extends UiEmojiBase = UiEmojiBase> {
+    public readonly options: UiClientOptions<C, E>;
+    public readonly core: UiCore<C, E>;
 
     private _actionRowBuilders: ActionRowBuilders;
     private _buttonBuilders: ButtonBuilders;
@@ -59,7 +67,7 @@ export class UiClient {
     }
 
     /**
-     * The modal builders. This will throw if Embeds is not part of the includes.
+     * The modal builders. This will throw if Modals is not part of the includes.
      */
     public get modals(): ModalBuilders {
         this.helpers.ensureModalsIncluded();
@@ -74,7 +82,7 @@ export class UiClient {
         return this._selectMenuBuilders;
     }
 
-    constructor(options?: UiClientOptions) {
+    constructor(options?: UiClientOptions<C, E>) {
         const defaultIncludes: Allowed[] = [
             Includes.Buttons,
             Includes.SelectMenus,

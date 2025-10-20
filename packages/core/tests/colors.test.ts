@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, it } from "bun:test";
-import { UiCore, UiColorsBase } from "../src/index";
+import { UiCore, UiColorsBase, type Color } from "../src/index";
 
 describe("Core Colors Suite", () => {
     let core: UiCore;
@@ -10,14 +10,14 @@ describe("Core Colors Suite", () => {
         core = new UiCore();
 
         class CustomColors extends UiColorsBase {
-            public override get info() {
+            public override get info(): Color {
                 return 0x00ff00;
             }
         }
 
         customColors = new CustomColors();
 
-        configuredCore = new UiCore({
+        configuredCore = new UiCore<CustomColors>({
             colors: customColors,
         });
     });

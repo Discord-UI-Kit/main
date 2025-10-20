@@ -7,7 +7,7 @@ import {
 } from "discord.js";
 import type { UiClient } from "..";
 
-interface EmbedOptions {
+export interface EmbedOptions {
     color?: ColorResolvable | null;
     title?: string | null;
     description?: string | null;
@@ -19,7 +19,7 @@ interface EmbedOptions {
     thumbnail?: string | null;
 }
 
-type EmbedOptionsWithoutColorAndTitle = Pick<
+export type EmbedOptionsWithoutColorAndTitle = Pick<
     EmbedOptions,
     | "author"
     | "description"

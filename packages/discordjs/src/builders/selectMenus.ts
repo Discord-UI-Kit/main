@@ -24,7 +24,7 @@ export type SelectMenuBuilder =
     | StringSelectMenuBuilder
     | UserSelectMenuBuilder;
 
-class StringSelectMenuOptionBuilders {
+export class StringSelectMenuOptionBuilders {
     public create(
         options:
             | StringSelectMenuOptionOptionsWithLabel

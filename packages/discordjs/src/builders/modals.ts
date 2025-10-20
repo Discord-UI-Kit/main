@@ -20,8 +20,8 @@ import type {
 } from "../options";
 import type { UiClient } from "..";
 
-type ValidModalComponent = TextDisplayBuilder | LabelBuilder;
-type ValidLabelComponent =
+export type ValidModalComponent = TextDisplayBuilder | LabelBuilder;
+export type ValidLabelComponent =
     | ChannelSelectMenuBuilder
     | MentionableSelectMenuBuilder
     | RoleSelectMenuBuilder
@@ -29,17 +29,43 @@ type ValidLabelComponent =
     | TextInputBuilder
     | UserSelectMenuBuilder;
 
-class EasyModalBuilder {
+/**
+ * Making modals easier to create since 2025!
+ *
+ * @example
+ * ```typescript
+ * const modal = ui.modals
+ *  .create("test", "Test Modal")
+ *  .withTextDisplay("Love you. :)")
+ *  .withTextInput("feelings", "How do you feel about me?")
+ *  .build();
+ * ```
+ */
+export class EasyModalBuilder {
     private client: UiClient;
     private components: ValidModalComponent[];
     private modal: ModalBuilder;
 
+    /**
+     * Called internally. **DO NOT INSTANTIATE MANUALLY!**
+     *
+     * Use `ModalBuilders.create()` instead!
+     */
     constructor(client: UiClient, customId: string, title: string) {
         this.client = client;
         this.components = [];
         this.modal = new ModalBuilder().setCustomId(customId).setTitle(title);
     }
 
+    /**
+     * @internal
+     * 
+     * Constructs a LabelBuilder with a component inside it.
+     * @param label The text of the label.
+     * @param component 
+     * @param options 
+     * @returns 
+     */
     private constructLabelWithComponent<T extends ValidLabelComponent>(
         label: string,
         component: T,
@@ -66,11 +92,22 @@ class EasyModalBuilder {
         return builder;
     }
 
+    /**
+     * Creates a brand new Text Display component, AKA just a piece of plain text shown to the user. Nothing special.
+     * @param content The content of the text display
+     * @returns This instance for chaining.
+     */
     public withTextDisplay(content: string): this {
         this.components.push(new TextDisplayBuilder().setContent(content));
         return this;
     }
 
+    /**
+     * Creates a brand new Text Input component, something the user can enter any text into!
+     * @param customId The custom ID of the text input, this is used when the user submits the modal.
+     * @param options The options for this text input, `label` and `style` are required here.
+     * @returns This instance for chaining.
+     */
     public withTextInput(customId: string, options: TextInputOptions): this {
         const textInput = new TextInputBuilder()
             .setCustomId(customId)
@@ -91,6 +128,12 @@ class EasyModalBuilder {
         return this;
     }
 
+    /**
+     * Creates a brand new Channel Select Menu component, where the user can unsurprisingly, select a channel.
+     * @param customId The custom ID of the text input, this is used when the user submits the modal.
+     * @param options The options for this component, `label` is required here.
+     * @returns This instance for chaining.
+     */
     public withChannelSelect(
         customId: string,
         options: ModalChannelSelectMenuOptions,
@@ -184,6 +227,11 @@ class EasyModalBuilder {
         return this;
     }
 
+    /**
+     * Builds the final ModalBuilder.
+     * @returns A ModalBuilder that holds all the components you constructed here.
+     * @see https://discord.js.org/docs/packages/discord.js/14.23.2/ModalBuilder:Class
+     */
     public build(): ModalBuilder {
         for (const component of this.components) {
             if (component instanceof LabelBuilder)
@@ -202,6 +250,20 @@ export class ModalBuilders {
         this.client = client;
     }
 
+    /**
+     * Allows you to easily create a modal!
+     * @param customId The custom ID of the modal, this is used when the user submits it.
+     * @param title The title of the modal
+     * @returns
+     * @example
+     * ```typescript
+     * const modal = ui.modals
+     *  .create("test", "Test Modal")
+     *  .withTextDisplay("Love you. :)")
+     *  .withTextInput("feelings", "How do you feel about me?")
+     *  .build();
+     * ```
+     */
     public create(customId: string, title: string): EasyModalBuilder {
         return new EasyModalBuilder(this.client, customId, title);
     }

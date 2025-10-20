@@ -6,13 +6,13 @@ import {
 } from "discord.js";
 import type { UiClient, UiEmojiBase } from "..";
 
-interface ButtonOptions {
+export interface ButtonOptions {
     disabled?: boolean;
     label?: string;
     emoji?: ComponentEmojiResolvable;
 }
 
-type LabelOrOptions = string | Partial<ButtonOptions>;
+export type LabelOrOptions = string | Partial<ButtonOptions>;
 
 export class ButtonBuilders {
     private readonly client: UiClient;

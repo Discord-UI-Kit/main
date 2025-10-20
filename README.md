@@ -6,7 +6,6 @@ The UI Kit for Discord that avoids useless boilerplate code by turning all those
 
 - Free and Open Source
 - Licensed under the [Unlicense](https://unlicense.org) (which means you can do whatever with this)
-- Framework-agnostic, you can use `discord.js`, `eris`, or anything else!
 
 ## Installation
 

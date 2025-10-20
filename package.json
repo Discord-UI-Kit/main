@@ -1,9 +1,9 @@
 {
-  "workspaces": [
-    "packages/**"
-  ],
-  "devDependencies": {
-    "mint": "^4.2.173",
-    "prettier": "^3.6.2"
-  }
+    "workspaces": [
+        "packages/**"
+    ],
+    "devDependencies": {
+        "mint": "^4.2.173",
+        "prettier": "^3.6.2"
+    }
 }

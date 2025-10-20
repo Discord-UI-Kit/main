@@ -1,6 +1,6 @@
 {
     "name": "@discord-ui-kit/core",
-    "version": "0.0.1-dev3",
+    "version": "0.0.1-dev4",
     "description": "The UI Kit for Discord that saves boilerplate! - Core Utilities",
     "module": "src/index.ts",
     "readme": "README.md",

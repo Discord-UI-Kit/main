@@ -4,7 +4,7 @@
     "description": "The UI Kit for Discord that saves boilerplate! - Discord.js Edition",
     "module": "src/index.ts",
     "readme": "README.md",
-    "license": "UNLICENSED",
+    "license": "Unlicense",
     "bugs": {
         "url": "https://codeberg.org/Discord-UI-Kit/discord-ui-kit/issues"
     },
@@ -16,16 +16,17 @@
         "type": "git",
         "url": "https://codeberg.org/Yoshiboi18303/discord-ui-kit.git"
     },
+    "homepage": "https://codeberg.org/Discord-UI-Kit/Discord-UI-Kit/",
     "type": "module",
     "devDependencies": {
-        "@types/bun": "latest"
-    },
-    "peerDependencies": {
+        "@types/bun": "latest",
         "typescript": "^5"
     },
-    "dependencies": {
-        "@discord-ui-kit/core": "npm:@jsr/discord-ui-kit__core@0.0.1-dev3",
-        "@discordjs/builders": "^1.12.2",
+    "peerDependencies": {
         "discord.js": "^14.x"
+    },
+    "dependencies": {
+        "@discord-ui-kit/core": "npm:@jsr/discord-ui-kit__core@0.0.1-dev4",
+        "@discordjs/builders": "^1.12.x"
     }
 }
